@@ -1,9 +1,10 @@
 export const siteDetails = {
     siteName: 'Finwise',
-    siteUrl: 'https://finwise-omega.vercel.app/',
+    siteURL: 'https://qadarstechnology.net',
+    // siteUrl: 'https://finwise-omega.vercel.app/',
     metadata: {
-        title: 'Finwise - Next.js and Tailwind CSS Landing Page Template',
-        description: 'Finwise empowers businesses with cutting-edge technology solutions to drive success and efficiency.',
+        title: 'Qadars Technology',
+        description: 'Website and software solutions',
     },
     language: 'en-us',
     locale: 'en-US',
