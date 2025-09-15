@@ -1,37 +1,85 @@
+// import { IPricing } from "@/types";
+
+// export const tiers: IPricing[] = [
+//     {
+//         name: 'Web Development',
+//         price: 'We design and develop responsive, high-performance websites tailored to your business needs. From sleek landing pages to full-scale web apps, our stack ensures flexibility and speed.',
+//         features: [
+//             'Frontend: React.js, Next.js, TailwindCSS',
+//             'Backend: Node.js, Express.js, Flask',
+//             'Databases: MongoDB, MySQL, PostgreSQL',
+//             // 'Email support',
+//         ],
+//     },
+//     {
+//         name: 'Data Analytics',
+//         price: 'Turn raw data into actionable insights with our analytics expertise. From dashboards to predictive models, we help you make data-driven decisions.',
+//         features: [
+//             'Python (Pandas, NumPy, Matplotlib, Seaborn)',
+//             'SQL (MySQL, PostgreSQL)',
+//             'Power BI / Tableau basics',
+//             // 'Priority email & phone support',
+//             // 'Advanced analytics',
+//         ],
+//     },
+//     {
+//         name: 'Machine Learning & AI',
+//         price: 'We build intelligent systems powered by ML & AI — from predictive modeling to natural language processing and computer vision.',
+//         features: [
+//             'Scikit-learn, TensorFlow, PyTorch',
+//             'NLP (NLTK, spaCy, Transformers)',
+//             'Computer Vision (OpenCV, CNNs)',
+//             // '24/7 dedicated support',
+//             // 'Custom solutions',
+//             // 'On-site training',
+//         ],
+//     },
+// ]
+
+
 import { IPricing } from "@/types";
 
 export const tiers: IPricing[] = [
     {
-        name: 'Starter',
-        price: 29,
+        name: 'Web Development',
+        price: 'We design and develop responsive, high-performance websites tailored to your business needs. From sleek landing pages to full-scale web apps, our stack ensures flexibility and speed.',
         features: [
-            'Basic cloud integration',
-            'Up to 5 team members',
-            '20GB storage',
-            'Email support',
+            'Frontend: React.js, Next.js, TailwindCSS',
+            'Backend: Node.js, Express.js, Flask',
+            'Databases: MongoDB, MySQL, PostgreSQL',
+        ],
+        deliverables: [
+            'Custom, responsive website designs',
+            'SEO-friendly & optimized performance',
+            'Clean, scalable code for future growth',
         ],
     },
     {
-        name: 'Pro',
-        price: 99,
+        name: 'Data Analytics',
+        price: 'Turn raw data into actionable insights with our analytics expertise. From dashboards to predictive models, we help you make data-driven decisions.',
         features: [
-            'Advanced cloud integration',
-            'Up to 20 team members',
-            '100GB storage',
-            'Priority email & phone support',
-            'Advanced analytics',
+            'Python (Pandas, NumPy, Matplotlib, Seaborn)',
+            'SQL (MySQL, PostgreSQL)',
+            'Power BI / Tableau basics',
+        ],
+        deliverables: [
+            'Interactive dashboards & reports',
+            'Data-driven business insights',
+            'Predictive models for smarter decisions',
         ],
     },
     {
-        name: 'Enterprise',
-        price: 'Custom',
+        name: 'Machine Learning & AI',
+        price: 'We build intelligent systems powered by ML & AI — from predictive modeling to natural language processing and computer vision.',
         features: [
-            'Full cloud integration',
-            'Unlimited team members',
-            'Unlimited storage',
-            '24/7 dedicated support',
-            'Custom solutions',
-            'On-site training',
+            'Scikit-learn, TensorFlow, PyTorch',
+            'NLP (NLTK, spaCy, Transformers)',
+            'Computer Vision (OpenCV, CNNs)',
+        ],
+        deliverables: [
+            'Custom ML models tailored to your use case',
+            'Automation of repetitive tasks with AI',
+            'Innovative NLP & computer vision solutions',
         ],
     },
-]
+];

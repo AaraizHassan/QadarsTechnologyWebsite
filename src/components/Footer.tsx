@@ -6,17 +6,32 @@ import { siteDetails } from '@/data/siteDetails';
 import { footerDetails } from '@/data/footer';
 import { getPlatformIconByName } from '@/utils';
 
+import Image from 'next/image';
+import logoimage from '../app/qadarslogo.png'; // adjust path if needed
+
 const Footer: React.FC = () => {
     return (
         <footer className="bg-hero-background text-foreground py-10">
             <div className="max-w-7xl w-full mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
                 <div>
                     <Link href="/" className="flex items-center gap-2">
-                        <FaFingerprint className="min-w-fit w-5 h-5 md:w-7 md:h-7" />
+                        <Image
+                            src={logoimage}
+                            alt="Qadars Technology Logo"
+                            width={90}  // adjust size
+                            height={90}
+                            className="rounded"
+                        />
                         <h3 className="manrope text-xl font-semibold cursor-pointer">
                             {siteDetails.siteName}
                         </h3>
                     </Link>
+                    {/* <Link href="/" className="flex items-center gap-2">
+                        <FaFingerprint className="min-w-fit w-5 h-5 md:w-7 md:h-7" />
+                        <h3 className="manrope text-xl font-semibold cursor-pointer">
+                            {siteDetails.siteName}
+                        </h3>
+                    </Link> */}
                     <p className="mt-3.5 text-foreground-accent">
                         {footerDetails.subheading}
                     </p>

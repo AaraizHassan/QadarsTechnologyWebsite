@@ -1,6 +1,6 @@
 export const ctaDetails = {
-    heading: 'Join Over 1 Million Users To Transform Your Finances',
-    subheading: 'Your journey to financial freedom starts here. Download Finwise today and take the first step towards a brighter financial future!',
-    appStoreUrl: '#',
-    googlePlayUrl: '#'
+    heading: 'Building Tomorrow’s Technology, Today',
+    subheading: 'At Qadars Technology, we specialize in web, app, and AI-driven solutions designed to give your business a competitive edge.',
+    // appStoreUrl: '#',
+    // googlePlayUrl: '#'
 }

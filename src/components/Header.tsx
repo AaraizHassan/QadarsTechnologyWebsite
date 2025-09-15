@@ -28,8 +28,8 @@ const Header: React.FC = () => {
                       <Image
                         src= {logoimage}
                         alt="Qadars Technology Logo"
-                        width={80}   // adjust size
-                        height={80}
+                        width={100}   // adjust size
+                        height={100}
                         />
                         <span className="manrope text-xl font-semibold text-foreground cursor-pointer">
                             {siteDetails.siteName}
@@ -53,11 +53,11 @@ const Header: React.FC = () => {
                                 </Link>
                             </li>
                         ))}
-                        <li>
+                        {/* <li>
                             <Link href="#cta" className="text-black bg-primary hover:bg-primary-accent px-8 py-3 rounded-full transition-colors">
                                 Download
                             </Link>
-                        </li>
+                        </li> */}
                     </ul>
 
                     {/* Mobile Menu Button */}
