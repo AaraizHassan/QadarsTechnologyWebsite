@@ -9,6 +9,8 @@ import { FaFingerprint } from 'react-icons/fa';
 import Container from './Container';
 import { siteDetails } from '@/data/siteDetails';
 import { menuItems } from '@/data/menuItems';
+import Image from 'next/image';
+import logoimage from '../app/qadarslogo.png';
 
 const Header: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -23,11 +25,24 @@ const Header: React.FC = () => {
                 <nav className="shadow-md md:shadow-none bg-white md:bg-transparent mx-auto flex justify-between items-center py-2 px-5 md:py-10">
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-2">
-                        <FaFingerprint className="text-foreground min-w-fit w-7 h-7" />
+                      <Image
+                        src= {logoimage}
+                        alt="Qadars Technology Logo"
+                        width={80}   // adjust size
+                        height={80}
+                        />
                         <span className="manrope text-xl font-semibold text-foreground cursor-pointer">
                             {siteDetails.siteName}
                         </span>
                     </Link>
+
+                    
+                    {/* <Link href="/" className="flex items-center gap-2">
+                        <FaFingerprint className="text-foreground min-w-fit w-7 h-7" />
+                        <span className="manrope text-xl font-semibold text-foreground cursor-pointer">
+                            {siteDetails.siteName}
+                        </span>
+                    </Link> */}
 
                     {/* Desktop Menu */}
                     <ul className="hidden md:flex space-x-6">

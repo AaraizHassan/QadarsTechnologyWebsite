@@ -1,5 +1,5 @@
 export const heroDetails = {
-    heading: 'Smart, Secure, Simple Financial Management',
-    subheading: 'From effortless budgeting to real-time investment insights, Finwise puts you in control of your money like never before',
+    heading: 'Smart Solutions, Smarter Tomorrow',
+    subheading: 'From powerful web experiences to data-driven intelligence, Qadars Technology helps you transform ideas into smart, scalable solutions.',
     centerImageSrc: '/images/hero-mockup.webp',
 }
