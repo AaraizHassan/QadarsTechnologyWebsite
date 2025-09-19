@@ -23,7 +23,8 @@ export const benefits: IBenefit[] = [
                 icon: <FiTrendingUp size={26} />
             }
         ],
-        imageSrc: "/images/mockup-1.webp"
+        // imageSrc: "/images/mockup-1.webp"
+        imageSrc: "/images/WebAppDev.png"
     },
     {
         title: "Data Science & Analytics",
@@ -45,7 +46,8 @@ export const benefits: IBenefit[] = [
                 icon: <FiPieChart size={26} />
             }
         ],
-        imageSrc: "/images/mockup-2.webp"
+        // imageSrc: "/images/mockup-2.webp"
+        imageSrc: "/images/DataScience.png"
     },
     {
         title: "Machine Learning Solutions",
@@ -67,6 +69,7 @@ export const benefits: IBenefit[] = [
                 icon: <FiShield size={26} />
             }
         ],
-        imageSrc: "/images/mockup-1.webp"
+        // imageSrc: "/images/mockup-1.webp"
+        imageSrc: "/images/MLSolutions.png"
     },
 ]

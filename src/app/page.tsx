@@ -13,7 +13,7 @@ const HomePage: React.FC = () => {
   return (
     <>
       <Hero />
-      <Logos />
+      {/* <Logos /> */}
       <Container>
         <Benefits />
 
@@ -35,7 +35,7 @@ const HomePage: React.FC = () => {
 
         <FAQ />
 
-        <Stats />
+        {/* <Stats /> */}
         
         <CTA />
       </Container>
