@@ -2,6 +2,7 @@ export const siteDetails = {
     siteName: 'Qadars Technology',
     siteURL: 'https://qadarstechnology.net',
     // siteUrl: 'https://finwise-omega.vercel.app/',
+    siteUrl: 'https://qadarstechnology.com/',
     metadata: {
         title: 'Qadars Technology',
         description: 'Website and software solutions',

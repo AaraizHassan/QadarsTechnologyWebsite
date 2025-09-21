@@ -39,7 +39,8 @@
 
 import { IPricing } from "@/types";
 
-export const tiers: IPricing[] = [
+// export const tiers: IPricing[] = [
+export const tiers: (IPricing & { deliverables?: string[] })[] = [
     {
         name: 'Web Development',
         price: 'We design and develop responsive, high-performance websites tailored to your business needs. From sleek landing pages to full-scale web apps, our stack ensures flexibility and speed.',
