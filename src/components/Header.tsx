@@ -22,7 +22,9 @@ const Header: React.FC = () => {
     return (
         <header className="bg-transparent fixed top-0 left-0 right-0 md:absolute z-50 mx-auto w-full">
             <Container className="!px-0">
-                <nav className="shadow-md md:shadow-none bg-white md:bg-transparent mx-auto flex justify-between items-center py-4 px-5 md:py-8">
+                {/* <nav className="shadow-md md:shadow-none bg-white md:bg-transparent mx-auto flex justify-between items-center py-4 px-5 md:py-8"> */}
+                <nav className="shadow-md md:shadow-none bg-white md:bg-transparent mx-auto flex justify-center md:justify-between items-center py-4 px-5 md:py-8">
+    
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-2">
                       <Image
@@ -35,6 +37,21 @@ const Header: React.FC = () => {
                             {siteDetails.siteName}
                         </span>
                     </Link>
+
+                    {/* <Link
+                        href="/"
+                        className="flex items-center gap-1 -translate-x-2 md:static"
+                    >
+                        <Image
+                            src={logoimage}
+                            alt="Qadars Technology Logo"
+                            width={100}
+                            height={100}
+                        />
+                        <span className="manrope text-xl font-semibold text-foreground cursor-pointer">
+                            {siteDetails.siteName}
+                        </span>
+                    </Link> */}
 
                     
                     {/* <Link href="/" className="flex items-center gap-2">
@@ -112,3 +129,5 @@ const Header: React.FC = () => {
 };
 
 export default Header;
+
+
