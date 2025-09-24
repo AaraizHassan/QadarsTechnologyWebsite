@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Transition } from '@headlessui/react';
 import { HiOutlineXMark, HiBars3 } from 'react-icons/hi2';
 // import { FaFingerprint } from 'react-icons/fa';
@@ -11,16 +11,43 @@ import { siteDetails } from '@/data/siteDetails';
 import { menuItems } from '@/data/menuItems';
 import Image from 'next/image';
 import logoimage from '../app/qadarslogo.png';
+import { Orbitron } from "next/font/google";
+
+const orbitron = Orbitron({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"], // pick the weights you need
+});
 
 const Header: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
+
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
 
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 20) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
     return (
-        <header className="bg-transparent fixed top-0 left-0 right-0 md:absolute z-50 mx-auto w-full">
+        // <header className="bg-transparent fixed top-0 left-0 right-0 z-50 mx-auto w-full">
+        <header
+            className={`fixed top-0 left-0 right-0 z-50 w-full transition-colors duration-300 ${
+            isScrolled ? "bg-white/70 backdrop-blur-md shadow-md" : "bg-transparent"
+            }`}
+        >
+
             <Container className="!px-0">
                 {/* <nav className="shadow-md md:shadow-none bg-white md:bg-transparent mx-auto flex justify-between items-center py-4 px-5 md:py-8"> */}
                 {/* <nav className="shadow-md md:shadow-none bg-white md:bg-transparent mx-auto flex justify-center md:justify-between items-center py-4 px-5 md:py-8"> */}
@@ -40,8 +67,9 @@ const Header: React.FC = () => {
                         {/* <span className="manrope text-xl font-semibold text-foreground cursor-pointer">
                             {siteDetails.siteName}
                         </span> */}
-                        <span className="manrope text-lg md:text-3xl lg:text-4xl font-semibold text-foreground cursor-pointer">
-                            {siteDetails.siteName}
+                        <span className={`${orbitron.className} text-base sm:text-lg md:text-3xl lg:text-4xl font-semibold text-foreground cursor-pointer`}>
+                        {/* className="manrope text-lg md:text-3xl lg:text-4xl font-semibold text-foreground cursor-pointer"                             */}
+                        {siteDetails.siteName}
                         </span>
 
                     </Link>
