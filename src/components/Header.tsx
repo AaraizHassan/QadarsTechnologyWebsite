@@ -51,7 +51,7 @@ const Header: React.FC = () => {
             <Container className="!px-0">
                 {/* <nav className="shadow-md md:shadow-none bg-white md:bg-transparent mx-auto flex justify-between items-center py-4 px-5 md:py-8"> */}
                 {/* <nav className="shadow-md md:shadow-none bg-white md:bg-transparent mx-auto flex justify-center md:justify-between items-center py-4 px-5 md:py-8"> */}
-                <nav className="shadow-md md:shadow-none bg-white md:bg-transparent mx-auto flex justify-between items-center py-4 px-1 md:py-8">
+                <nav className="shadow-md md:shadow-none bg-white md:bg-transparent mx-auto flex justify-between items-center py-4 px-1 md:py-4">
 
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-2">
@@ -60,14 +60,14 @@ const Header: React.FC = () => {
                         alt="Qadars Technology Logo"
                         // width={100}   // adjust size
                         // height={100}
-                        width={100}   // mobile size
-                        height={100}
+                        width={70}   // mobile size
+                        height={70}
                         className="md:w-[200px] md:h-[100]"
                         />
                         {/* <span className="manrope text-xl font-semibold text-foreground cursor-pointer">
                             {siteDetails.siteName}
                         </span> */}
-                        <span className={`${orbitron.className} text-base sm:text-lg md:text-3xl lg:text-4xl font-semibold text-foreground cursor-pointer`}>
+                        <span className={`${orbitron.className} text-xs sm:text-lg md:text-3xl lg:text-4xl font-semibold text-foreground cursor-pointer`}>
                         {/* className="manrope text-lg md:text-3xl lg:text-4xl font-semibold text-foreground cursor-pointer"                             */}
                         {siteDetails.siteName}
                         </span>
