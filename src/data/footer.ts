@@ -22,8 +22,8 @@ export const footerDetails: {
             url: "#testimonials"
         }
     ],
-    email: 'address@yoursite.com',
-    telephone: '+1 (123) 456-7890',
+    email: 'aaraiz@qadars.com',
+    telephone: '+92-315-422-7249',
     socials: {
         // github: 'https://github.com',
         // x: 'https://twitter.com/x',
