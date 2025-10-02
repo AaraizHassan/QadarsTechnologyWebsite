@@ -17,7 +17,7 @@ const HomePage: React.FC = () => {
       <Hero />
       {/* <Logos /> */}
       <Container>
-        <Benefits />
+        {/* <Benefits /> */}
 
         <Section
           id="techstack"
