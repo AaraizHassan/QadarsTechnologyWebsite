@@ -1,103 +1,114 @@
-// import clsx from "clsx";
-// import { BsFillCheckCircleFill } from "react-icons/bs";
-
-// import { IPricing } from "@/types";
-
-// interface Props {
-//     tier: IPricing;
-//     highlight?: boolean;
-// }
-
-// const PricingColumn: React.FC<Props> = ({ tier, highlight }: Props) => {
-//     const { name, price, features } = tier;
-
-//     return (
-//         <div className={clsx("w-full max-w-sm mx-auto bg-white rounded-xl border border-gray-200 lg:max-w-full", { "shadow-lg": highlight })}>
-//             <div className="p-6 border-b border-gray-200 rounded-t-xl">
-//                 <h3 className="text-2xl font-semibold mb-4">{name}</h3>
-//                 <p className="text-3xl md:text-5xl font-bold mb-6">
-//                     <span className={clsx({ "text-secondary": highlight })}>
-//                         {typeof price === 'number' ? `$${price}` : price}
-//                     </span>
-//                     {typeof price === 'number' && <span className="text-lg font-normal text-gray-600">/mo</span>}
-//                 </p>
-//                 <button className={clsx("w-full py-3 px-4 rounded-full transition-colors", { "bg-primary hover:bg-primary-accent": highlight, "bg-hero-background hover:bg-gray-200": !highlight })}>
-//                     Get Started
-//                 </button>
-//             </div>
-//             <div className="p-6 mt-1">
-//                 <p className="font-bold mb-0">Stack Highlights:</p>
-//                 {/* <p className="text-foreground-accent mb-5">Stack Highlights:</p> */}
-//                 <ul className="space-y-4 mb-8">
-//                     {features.map((feature, index) => (
-//                         <li key={index} className="flex items-center">
-//                             <BsFillCheckCircleFill className="h-5 w-5 text-secondary mr-2" />
-//                             <span className="text-foreground-accent">{feature}</span>
-//                         </li>
-//                     ))}
-//                 </ul>
-//             </div>
-//         </div>
-//     )
-// }
-
-// export default PricingColumn
-
-
+'use client';
+import React, { useState } from "react";
 import clsx from "clsx";
 import { BsFillCheckCircleFill } from "react-icons/bs";
 import { IPricing } from "@/types";
 
 interface Props {
-    tier: IPricing & { deliverables?: string[] };
-    highlight?: boolean;
+  tier: IPricing & { deliverables?: string[] };
+  highlight?: boolean;
+  expanded?: boolean;
+  onToggle?: () => void;
 }
 
-const PricingColumn: React.FC<Props> = ({ tier, highlight }: Props) => {
-    const { name, price, features, deliverables } = tier;
+const PricingColumn: React.FC<Props> = ({
+  tier,
+  highlight,
+  expanded,
+  onToggle,
+}) => {
+  const { name, price, features, deliverables } = tier;
+  const [hovered, setHovered] = useState(false);
 
-    return (
-        <div
-            className={clsx(
-                "w-full max-w-sm mx-auto bg-white rounded-xl border border-gray-200 lg:max-w-full",
-                { "shadow-lg": highlight }
-            )}
-        >
-            <div className="p-6 border-b border-gray-200 rounded-t-xl">
-                <h3 className="text-2xl font-semibold mb-3">{name}</h3>
-                <p className="text-sm text-gray-700 mb-4 leading-relaxed">
-                    {typeof price === "number" ? `$${price}` : price}
-                </p>
-            </div>
+  // Only expand when hovered (desktop) or clicked (mobile)
+  const isExpanded = hovered || expanded;
 
-            <div className="p-6 mt-1">
-                {/* Stack Highlights */}
-                <p className="font-bold mb-2">Stack Highlights:</p>
-                <ul className="space-y-2 mb-6">
-                    {features.map((feature, index) => (
-                        <li key={index} className="flex items-center text-sm">
-                            <BsFillCheckCircleFill className="h-4 w-4 text-secondary mr-2" />
-                            <span className="text-foreground-accent">{feature}</span>
-                        </li>
-                    ))}
-                </ul>
+  return (
+    <div
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      onClick={onToggle}
+      className={clsx(
+        "relative w-full max-w-sm mx-auto bg-white rounded-xl border border-gray-200 transition-all duration-500 ease-in-out cursor-pointer overflow-hidden lg:max-w-full",
+        {
+          "shadow-xl scale-105": highlight && isExpanded,
+          "shadow-md": highlight && !isExpanded,
+          "animate-shake-slow": !isExpanded, // Shake when not expanded
+        }
+      )}
+    >
+      {/* Card top section */}
+      <div className="p-6 border-b border-gray-200 rounded-t-xl">
+        <h3 className="text-2xl font-semibold mb-3">{name}</h3>
+        <p className="text-sm text-gray-700 mb-4 leading-relaxed">
+          {typeof price === "number" ? `$${price}` : price}
+        </p>
+      </div>
 
-                {/* What We Deliver */}
-                {deliverables && (
-                    <>
-                        <p className="font-bold mb-2">What We Deliver:</p>
-                        <ul className="space-y-2">
-                            {deliverables.map((item, idx) => (
-                                <li key={idx} className="text-sm text-gray-700">
-                                    ✔ {item}
-                                </li>
-                            ))}
-                        </ul>
-                    </>
-                )}
-            </div>
-        </div>
-    );
+      {/* Expandable section */}
+      <div
+        className={clsx(
+          "transition-all duration-700 ease-in-out overflow-hidden px-6",
+          isExpanded ? "max-h-[1000px] opacity-100 py-6" : "max-h-0 opacity-0 py-0"
+        )}
+      >
+        <p className="font-bold mb-2">Stack Highlights:</p>
+        <ul className="space-y-2 mb-6">
+          {features.map((feature, index) => (
+            <li key={index} className="flex items-center text-sm">
+              <BsFillCheckCircleFill className="h-4 w-4 text-blue-600 mr-2" />
+              <span className="text-gray-800">{feature}</span>
+            </li>
+          ))}
+        </ul>
+
+        {deliverables && (
+          <>
+            <p className="font-bold mb-2">What We Deliver:</p>
+            <ul className="space-y-2">
+              {deliverables.map((item, idx) => (
+                <li key={idx} className="text-sm text-gray-700">
+                  ✔ {item}
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
+      </div>
+
+      {/* Mystery Box Shake Animation */}
+      <style jsx>{`
+        @keyframes shake-slow {
+          0%,
+          100% {
+            transform: translate(0, 0);
+          }
+          10% {
+            transform: translate(-1px, 1px) rotate(-0.5deg);
+          }
+          20% {
+            transform: translate(1px, -1px) rotate(0.5deg);
+          }
+          30% {
+            transform: translate(-1px, 0px) rotate(-0.3deg);
+          }
+          40% {
+            transform: translate(1px, 1px) rotate(0.3deg);
+          }
+          50% {
+            transform: translate(0px, -1px) rotate(0deg);
+          }
+        }
+
+        @media (min-width: 768px) {
+          .animate-shake-slow {
+            animation: shake-slow 3s ease-in-out infinite;
+            animation-delay: calc(1s * var(--delay, 0));
+          }
+        }
+      `}</style>
+    </div>
+  );
 };
 
 export default PricingColumn;
