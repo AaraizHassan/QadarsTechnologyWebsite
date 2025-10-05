@@ -9,18 +9,18 @@ export const footerDetails: {
 } = {
     subheading: "Empowering businesses with cutting-edge financial technology solutions.",
     quickLinks: [
-        {
-            text: "Our Expertise",
-            url: "#ourexpertise"
-        },
+        // {
+        //     text: "Our Expertise",
+        //     url: "#ourexpertise"
+        // },
         {
             text: "Tech Stack",
             url: "#techstack"
-        },
-        {
-            text: "Testimonials",
-            url: "#testimonials"
         }
+        // {
+        //     text: "Testimonials",
+        //     url: "#testimonials"
+        // }
     ],
     email: 'aaraiz@qadars.com',
     telephone: '+92-315-422-7249',
