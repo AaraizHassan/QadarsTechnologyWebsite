@@ -41,6 +41,10 @@ const HomePage: React.FC = () => {
         {/* <Stats /> */}
         
         <CTA />
+        {/* <Section id="contactus" title="Contact Us">
+          <CTA />
+        </Section> */}
+
       </Container>
     </>
   );

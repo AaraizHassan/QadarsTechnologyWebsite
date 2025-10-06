@@ -23,7 +23,8 @@
 //   );
 // };
 
-// export default Pricing
+// export default Pricing;
+
 
 'use client';
 import React, { useState } from "react";
