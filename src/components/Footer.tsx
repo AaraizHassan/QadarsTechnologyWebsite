@@ -49,7 +49,7 @@ const Footer: React.FC = () => {
                 <div>
                     <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
 
-                    {footerDetails.email && <a href={`mailto:${footerDetails.email}`}  className="block text-foreground-accent hover:text-foreground">Email: {footerDetails.email}</a>}
+                    {footerDetails.email && <a href={`mailto:${footerDetails.email}?subject=Inquiry%20from%20Qadars%20Technology%20Website&body=Hi%20Qadars%20Technology%2C%0D%0A`}  className="block text-foreground-accent hover:text-foreground">Email: {footerDetails.email}</a>}
 
                     {footerDetails.telephone && <a href={`tel:${footerDetails.telephone}`} className="block text-foreground-accent hover:text-foreground">Phone: {footerDetails.telephone}</a>}
 
