@@ -8,7 +8,7 @@ const Hero: React.FC = () => {
   return (
     <section
       id="hero"
-      className="relative flex items-center justify-center pb-32 pt-32 md:pt-40 px-5 overflow-hidden bg-black"
+      className="relative flex items-center justify-center pb-32 pt-32 md:pt-40 px-5 overflow-hidden" //bg-black
     >
       {/* Falling Code Animation Layer */}
       <div className="absolute inset-0 -z-0 overflow-hidden pointer-events-none">
@@ -39,7 +39,7 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Black background layer */}
-      <div className="absolute inset-0 -z-10 w-full h-full bg-black"></div>
+      {/* <div className="absolute inset-0 -z-10 w-full h-full bg-black"></div> */}
 
       {/* Text content */}
       <div className="text-center z-10">
