@@ -4,16 +4,41 @@
 
 :root {
   /* --background: #ffffff; */
-  --background: #808080; 
+  /* --background: #808080; 
   --foreground: #171717;
   --primary: #FED835;
-  --secondary: #304fff;
+  --secondary: #304fff; */
 
-  --primary-accent: #e5c230;
+  /* --primary-accent: #e5c230; */
   /* --foreground-accent: #454545; */
-  --foreground-accent: #171717;
+  /* --foreground-accent: #171717; */
   /* --hero-background: #F3F3F5; */
-  --hero-background: #707070;
+  /* --hero-background: #707070; */
+  /* Core Theme Colors */
+  /* --background: #F8FAFC;  */
+  /* Soft light grey background */
+  /* --foreground: #111827;  */
+  /* Charcoal black for main text */
+
+  /* Brand Accents */
+  /* --primary: #2563EB;  */
+  /* Bright tech blue (buttons, links, highlights) */
+  /* --secondary: #1E40AF;  */
+  /* Deep navy blue (headings, navbar, emphasis) */
+
+  /* Supporting Colors */
+  /* --primary-accent: #E0E7FF;  */
+  /* Pale blue tint (cards, highlights) */
+  /* --foreground-accent: #6B7280;  */
+  /* Muted grey for subtext, paragraphs */
+  /* --hero-background: #F8FAFC;  */
+  /* Light hero section background */
+
+  /* Optional extra tones (if needed later) */
+  /* --footer-background: #111827;  */
+  /* Footer background */
+  /* --footer-text: #E5E7EB;  */
+  /* Footer text */
 }
 
 html {

@@ -13,38 +13,31 @@ import { Orbitron } from "next/font/google";
 
 const orbitron = Orbitron({
   subsets: ["latin"],
-  weight: ["400", "500", "700"], // pick the weights you need
+  weight: ["400", "500", "700"],
 });
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  const toggleMenu = () => setIsOpen(!isOpen);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 20);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 w-full transition-colors duration-300 ${
-        isScrolled ? "bg-black/70 backdrop-blur-md shadow-md" : "bg-transparent"
-      } text-white`}
+      className={`fixed top-0 left-0 right-0 z-50 w-full transition-colors duration-300 
+      ${isScrolled ? "bg-[#1E40AF]/95 backdrop-blur-md shadow-md" : "bg-[#1E40AF]"} 
+      text-white`}
     >
       <Container className="!px-0">
-        <nav className="shadow-md md:shadow-none mx-auto flex justify-between items-center py-4 px-1 md:py-4">
+        <nav className="mx-auto flex justify-between items-center py-4 px-1 md:py-4">
 
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
@@ -68,7 +61,7 @@ const Header: React.FC = () => {
               <li key={item.text}>
                 <Link
                   href={item.url}
-                  className="text-white hover:text-blue-400 transition-colors"
+                  className="text-white hover:text-[#93C5FD] transition-colors"
                 >
                   {item.text}
                 </Link>
@@ -76,12 +69,22 @@ const Header: React.FC = () => {
             ))}
           </ul>
 
+          {/* Contact / CTA Button */}
+          <div className="hidden md:flex">
+            <Link
+              href="#contactus"
+              className="bg-[#2563EB] text-white px-4 py-2 rounded-md font-semibold hover:bg-[#1D4ED8] transition"
+            >
+              Contact Us
+            </Link>
+          </div>
+
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
             <button
               onClick={toggleMenu}
               type="button"
-              className="bg-primary text-white focus:outline-none rounded-full w-10 h-10 flex items-center justify-center"
+              className="bg-[#2563EB] text-white focus:outline-none rounded-full w-10 h-10 flex items-center justify-center hover:bg-[#1D4ED8] transition"
               aria-controls="mobile-menu"
               aria-expanded={isOpen}
             >
@@ -96,7 +99,7 @@ const Header: React.FC = () => {
         </nav>
       </Container>
 
-      {/* Mobile Menu with Transition */}
+      {/* Mobile Menu */}
       <Transition
         show={isOpen}
         enter="transition ease-out duration-200 transform"
@@ -106,19 +109,28 @@ const Header: React.FC = () => {
         leaveFrom="opacity-100 scale-100"
         leaveTo="opacity-0 scale-95"
       >
-        <div id="mobile-menu" className="md:hidden bg-black/90 text-white shadow-lg">
+        <div id="mobile-menu" className="md:hidden bg-[#1E40AF] text-white shadow-lg">
           <ul className="flex flex-col space-y-4 pt-1 pb-6 px-6">
             {menuItems.map((item) => (
               <li key={item.text}>
                 <Link
                   href={item.url}
-                  className="text-white hover:text-blue-400 block"
+                  className="text-white hover:text-[#93C5FD] block transition-colors"
                   onClick={toggleMenu}
                 >
                   {item.text}
                 </Link>
               </li>
             ))}
+            <li>
+              <Link
+                href="#contactus"
+                className="bg-[#2563EB] text-white px-4 py-2 rounded-md font-semibold hover:bg-[#1D4ED8] transition block text-center"
+                onClick={toggleMenu}
+              >
+                Contact Us
+              </Link>
+            </li>
           </ul>
         </div>
       </Transition>

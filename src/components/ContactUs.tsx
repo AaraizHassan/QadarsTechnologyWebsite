@@ -6,7 +6,7 @@ import { contactDetails } from "@/data/contactDetails";
 const ContactUs: React.FC = () => {
   const [formData, setFormData] = useState({
     name: "",
-    email: "", // 👈 added email
+    email: "",
     service: contactDetails.services[0],
     subject: "",
     message: "",
@@ -14,7 +14,9 @@ const ContactUs: React.FC = () => {
 
   const [status, setStatus] = useState<"idle" | "success" | "error" | "loading">("idle");
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -31,7 +33,13 @@ const ContactUs: React.FC = () => {
 
       if (res.ok) {
         setStatus("success");
-        setFormData({ name: "", email: "", service: contactDetails.services[0], subject: "", message: "" });
+        setFormData({
+          name: "",
+          email: "",
+          service: contactDetails.services[0],
+          subject: "",
+          message: "",
+        });
       } else {
         throw new Error("Failed to send message");
       }
@@ -42,12 +50,20 @@ const ContactUs: React.FC = () => {
   };
 
   return (
-    <section id="contactus" className="bg-hero-background py-16 px-6">
+    <section id="contactus" className="bg-[#E0E7FF] py-16 px-6">
       <div className="max-w-3xl mx-auto text-center">
-        <h2 className="text-4xl font-bold mb-4 text-blue-800">{contactDetails.heading}</h2>
-        <p className="text-gray-600 mb-8">{contactDetails.description}</p>
+        {/* Heading */}
+        <h2 className="text-4xl font-bold mb-4 text-[#1E3A8A]">
+          {contactDetails.heading}
+        </h2>
+        <p className="text-[#4B5563] mb-8">{contactDetails.description}</p>
 
-        <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-6 bg-background p-8 rounded-xl shadow-md">
+        {/* Form */}
+        <form
+          onSubmit={handleSubmit}
+          className="grid grid-cols-1 gap-6 bg-white p-8 rounded-xl shadow-lg"
+        >
+          {/* Name */}
           <input
             type="text"
             name="name"
@@ -55,10 +71,10 @@ const ContactUs: React.FC = () => {
             value={formData.name}
             onChange={handleChange}
             required
-            className="border border-gray-300 rounded-lg px-4 py-2 bg-gray-100 text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="border border-gray-300 rounded-lg px-4 py-2 text-[#2563EB] placeholder-[#9CA3AF] focus:outline-none focus:ring-2 focus:ring-[#2563EB]"
           />
 
-          {/* 👇 added email field */}
+          {/* Email */}
           <input
             type="email"
             name="email"
@@ -66,20 +82,24 @@ const ContactUs: React.FC = () => {
             value={formData.email}
             onChange={handleChange}
             required
-            className="border border-gray-300 rounded-lg px-4 py-2 bg-gray-100 text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="border border-gray-300 rounded-lg px-4 py-2 text-[#2563EB] placeholder-[#9CA3AF] focus:outline-none focus:ring-2 focus:ring-[#2563EB]"
           />
 
+          {/* Service */}
           <select
             name="service"
             value={formData.service}
             onChange={handleChange}
-            className="border border-gray-300 rounded-lg px-4 py-2 bg-gray-100 text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="border border-gray-300 rounded-lg px-4 py-2 text-[#2563EB] bg-white placeholder-[#9CA3AF] focus:outline-none focus:ring-2 focus:ring-[#2563EB]"
           >
             {contactDetails.services.map((service) => (
-              <option key={service} value={service}>{service}</option>
+              <option key={service} value={service}>
+                {service}
+              </option>
             ))}
           </select>
 
+          {/* Subject */}
           <input
             type="text"
             name="subject"
@@ -87,9 +107,10 @@ const ContactUs: React.FC = () => {
             value={formData.subject}
             onChange={handleChange}
             required
-            className="border border-gray-300 rounded-lg px-4 py-2 bg-gray-100 text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="border border-gray-300 rounded-lg px-4 py-2 text-[#2563EB] placeholder-[#9CA3AF] focus:outline-none focus:ring-2 focus:ring-[#2563EB]"
           />
 
+          {/* Message */}
           <textarea
             name="message"
             placeholder="Message"
@@ -97,17 +118,19 @@ const ContactUs: React.FC = () => {
             value={formData.message}
             onChange={handleChange}
             required
-            className="border border-gray-300 rounded-lg px-4 py-2 bg-gray-100 text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="border border-gray-300 rounded-lg px-4 py-2 text-[#2563EB] placeholder-[#9CA3AF] focus:outline-none focus:ring-2 focus:ring-[#2563EB]"
           />
 
+          {/* Button */}
           <button
             type="submit"
             disabled={status === "loading"}
-            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg transition"
+            className="bg-[#2563EB] hover:bg-[#1E40AF] text-white font-semibold py-2 px-6 rounded-lg transition"
           >
             {status === "loading" ? "Sending..." : "Send Message"}
           </button>
 
+          {/* Status Messages */}
           {status === "success" && (
             <p className="text-green-600 font-medium">{contactDetails.successMessage}</p>
           )}

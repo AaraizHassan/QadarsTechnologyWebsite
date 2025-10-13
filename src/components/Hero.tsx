@@ -8,7 +8,7 @@ const Hero: React.FC = () => {
   return (
     <section
       id="hero"
-      className="relative flex items-center justify-center pb-32 pt-32 md:pt-40 px-5 overflow-hidden" //bg-black
+      className="relative flex items-center justify-center pb-32 pt-32 md:pt-40 px-5 overflow-hidden bg-[#F8FAFC]"
     >
       {/* Falling Code Animation Layer */}
       <div className="absolute inset-0 -z-0 overflow-hidden pointer-events-none">
@@ -23,7 +23,7 @@ const Hero: React.FC = () => {
           return (
             <span
               key={i}
-              className="absolute text-green-400 font-mono"
+              className="absolute text-[#2563EB] font-mono"
               style={{
                 left: `${left}%`,
                 top: `-10%`,
@@ -38,15 +38,12 @@ const Hero: React.FC = () => {
         })}
       </div>
 
-      {/* Black background layer */}
-      {/* <div className="absolute inset-0 -z-10 w-full h-full bg-black"></div> */}
-
       {/* Text content */}
       <div className="text-center z-10">
-        <h1 className="text-4xl md:text-6xl md:leading-tight font-bold text-blue-900 max-w-lg md:max-w-2xl mx-auto">
+        <h1 className="text-4xl md:text-6xl md:leading-tight font-bold text-[#111827] max-w-lg md:max-w-2xl mx-auto">
           {heroDetails.heading}
         </h1>
-        <p className="mt-4 text-blue-400 max-w-lg mx-auto">
+        <p className="mt-4 text-[#6B7280] max-w-lg mx-auto">
           {heroDetails.subheading}
         </p>
 
@@ -54,7 +51,7 @@ const Hero: React.FC = () => {
         <div className="mt-6 flex flex-col sm:flex-row items-center sm:gap-4 w-fit mx-auto">
           <a
             href="#techstack"
-            className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow-md transform transition-all duration-300 hover:scale-110 active:animate-bounce-click"
+            className="px-6 py-3 bg-[#2563EB] text-white rounded-lg shadow-md transform transition-all duration-300 hover:bg-[#1E3A8A] hover:scale-110 active:animate-bounce-click"
           >
             Get Started
           </a>

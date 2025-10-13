@@ -21,7 +21,6 @@ const PricingColumn: React.FC<Props> = ({
   const [hovered, setHovered] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
-  // Detect screen size once (to differentiate hover vs click behavior)
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 1024);
     checkMobile();
@@ -35,7 +34,6 @@ const PricingColumn: React.FC<Props> = ({
     <div
       onMouseEnter={() => !isMobile && setHovered(true)}
       onMouseLeave={() => !isMobile && setHovered(false)}
-      // onClick={() => isMobile && onToggle?.()} // only toggle on mobile
       onClick={() => {
         if (isMobile) {
           onToggle?.();
@@ -44,7 +42,7 @@ const PricingColumn: React.FC<Props> = ({
             if (contactSection) {
               contactSection.scrollIntoView({ behavior: "smooth" });
             }
-          }, 3000); // waits half a second before scrolling
+          }, 3000);
         } else {
           const contactSection = document.getElementById("contactus");
           if (contactSection) {
@@ -52,21 +50,20 @@ const PricingColumn: React.FC<Props> = ({
           }
         }
       }}
-
-
       className={clsx(
-        "relative w-full max-w-sm mx-auto bg-white rounded-xl border border-gray-200 transition-all duration-500 ease-in-out cursor-pointer overflow-hidden lg:max-w-full",
+        "relative w-full max-w-sm mx-auto rounded-xl border transition-all duration-500 ease-in-out cursor-pointer overflow-hidden lg:max-w-full bg-white shadow-md hover:shadow-lg hover:bg-[#E0E7FF]",
         {
           "shadow-xl scale-105": highlight && isExpanded,
-          "shadow-md": highlight && !isExpanded,
-          "animate-shake-slow": !isExpanded, // mystery shake when not expanded
+          "animate-shake-slow": !isExpanded,
         }
       )}
     >
       {/* Top section */}
       <div className="p-6 border-b border-gray-200 rounded-t-xl">
-        <h3 className="text-2xl font-semibold mb-3">{name}</h3>
-        <p className="text-sm text-gray-700 mb-4 leading-relaxed">
+        <h3 className="text-2xl font-semibold mb-3 text-[#1E40AF]">
+          {name}
+        </h3>
+        <p className="text-sm text-[#374151] mb-4 leading-relaxed">
           {typeof price === "number" ? `$${price}` : price}
         </p>
       </div>
@@ -78,22 +75,22 @@ const PricingColumn: React.FC<Props> = ({
           isExpanded ? "max-h-[1000px] opacity-100 py-6" : "max-h-0 opacity-0 py-0"
         )}
       >
-        <p className="font-bold mb-2">Stack Highlights:</p>
+        <p className="font-bold mb-2 text-[#1E40AF]">Stack Highlights:</p>
         <ul className="space-y-2 mb-6">
           {features.map((feature, index) => (
-            <li key={index} className="flex items-center text-sm">
-              <BsFillCheckCircleFill className="h-4 w-4 text-blue-600 mr-2" />
-              <span className="text-gray-800">{feature}</span>
+            <li key={index} className="flex items-center text-sm text-[#374151]">
+              <BsFillCheckCircleFill className="h-4 w-4 text-[#2563EB] mr-2" />
+              {feature}
             </li>
           ))}
         </ul>
 
         {deliverables && (
           <>
-            <p className="font-bold mb-2">What We Deliver:</p>
+            <p className="font-bold mb-2 text-[#1E40AF]">What We Deliver:</p>
             <ul className="space-y-2">
               {deliverables.map((item, idx) => (
-                <li key={idx} className="text-sm text-gray-700">
+                <li key={idx} className="text-sm text-[#374151]">
                   ✔ {item}
                 </li>
               ))}
@@ -102,7 +99,7 @@ const PricingColumn: React.FC<Props> = ({
         )}
       </div>
 
-      {/* Shake animation for mystery effect */}
+      {/* Shake animation */}
       <style jsx>{`
         @keyframes shake-slow {
           0%, 100% { transform: translate(0, 0); }
