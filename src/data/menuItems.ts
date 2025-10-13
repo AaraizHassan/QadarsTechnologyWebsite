@@ -4,11 +4,11 @@ export const menuItems: IMenuItem[] = [
     {
         text: "Tech Stack",
         url: "#techstack"
-    },
-    {
-        text: "Contact Us",
-        url: "#contactus"
     }
+    // {
+    //     text: "Contact Us",
+    //     url: "#contactus"
+    // }
     // ,
     // {
     //     text: "Testimonials",

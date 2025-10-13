@@ -8,7 +8,7 @@ import Container from './Container';
 import { siteDetails } from '@/data/siteDetails';
 import { menuItems } from '@/data/menuItems';
 import Image from 'next/image';
-import logoimage from '../app/qadarslogo.png';
+import logoimage from '../app/Qadars Technology Logo.png';
 import { Orbitron } from "next/font/google";
 
 const orbitron = Orbitron({
@@ -46,13 +46,13 @@ const Header: React.FC = () => {
               alt="Qadars Technology Logo"
               width={70}
               height={70}
-              className="md:w-[200px] md:h-[100]"
+              className="md:w-[100px] md:h-[100]"
             />
-            <span
+            {/* <span
               className={`${orbitron.className} text-xs sm:text-lg md:text-3xl lg:text-4xl font-semibold cursor-pointer`}
             >
               {siteDetails.siteName}
-            </span>
+            </span> */}
           </Link>
 
           {/* Desktop Menu */}
@@ -68,6 +68,40 @@ const Header: React.FC = () => {
               </li>
             ))}
           </ul>
+          {/* Desktop Menu */}
+          {/* <div className="hidden md:flex items-center justify-between w-full px-10">
+            
+            {/* <ul className="flex space-x-6">
+              {menuItems
+                .filter((item) => item.text === "Tech Stack")
+                .map((item) => (
+                <li key={item.text}>
+                  <Link
+                    href={item.url}
+                    className="text-white hover:text-[#93C5FD] transition-colors font-medium"
+                  >
+                    {item.text}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            <ul className="flex space-x-6">
+              {menuItems
+                .filter((item) => item.text !== "Tech Stack")
+                .map((item) => (
+                <li key={item.text}>
+                  <Link
+                    href={item.url}
+                    className="text-white hover:text-[#93C5FD] transition-colors font-medium"
+                  >
+                    {item.text}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div> */}
+
 
           {/* Contact / CTA Button */}
           <div className="hidden md:flex">
