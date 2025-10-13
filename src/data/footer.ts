@@ -16,6 +16,10 @@ export const footerDetails: {
         {
             text: "Tech Stack",
             url: "#techstack"
+        },
+        {
+            text: "Contact Us",
+            url: "#contactus"
         }
         // {
         //     text: "Testimonials",
