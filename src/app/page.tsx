@@ -19,6 +19,7 @@ const HomePage: React.FC = () => {
       {/* <Logos /> */}
       <Container>
         {/* <Benefits /> */}
+        <CTA />
 
         <Section
           id="techstack"
@@ -37,15 +38,14 @@ const HomePage: React.FC = () => {
           <Testimonials />
         </Section> */}
 
-        <FAQ />
 
         {/* <Stats /> */}
         
-        <CTA />
         {/* <Section id="contactus" title="Contact Us">
           <CTA />
-        </Section> */}
+          </Section> */}
         <ContactUs />
+        <FAQ />
       </Container>
     </>
   );

@@ -37,10 +37,12 @@ const Header: React.FC = () => {
       text-white`}
     >
       <Container className="!px-0">
-        <nav className="mx-auto flex justify-between items-center py-4 px-1 md:py-4">
+        {/* <nav className="mx-auto flex justify-between items-center py-4 px-1 md:py-4"> */}
+        <nav className="mx-auto flex items-center justify-start gap-6 py-4 px-4 md:py-4">
+
 
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2 mr-auto">
             <Image
               src={logoimage}
               alt="Qadars Technology Logo"
@@ -48,15 +50,10 @@ const Header: React.FC = () => {
               height={70}
               className="md:w-[100px] md:h-[100]"
             />
-            {/* <span
-              className={`${orbitron.className} text-xs sm:text-lg md:text-3xl lg:text-4xl font-semibold cursor-pointer`}
-            >
-              {siteDetails.siteName}
-            </span> */}
           </Link>
 
           {/* Desktop Menu */}
-          <ul className="hidden md:flex space-x-6">
+          <ul className="hidden md:flex space-x-6 ml-auto mr-4">
             {menuItems.map((item) => (
               <li key={item.text}>
                 <Link
@@ -68,6 +65,45 @@ const Header: React.FC = () => {
               </li>
             ))}
           </ul>
+
+          {/* Contact / CTA Button */}
+          <div className="hidden md:flex">
+            <Link
+              href="#contactus"
+              className="bg-[#2563EB] text-white px-4 py-2 rounded-md font-semibold hover:bg-[#1D4ED8] transition"
+            >
+              Contact Us
+            </Link>
+          </div>
+
+          {/* <Link href="/" className="flex items-center gap-2">
+            <Image
+              src={logoimage}
+              alt="Qadars Technology Logo"
+              width={70}
+              height={70}
+              className="md:w-[100px] md:h-[100]"
+            /> */}
+            {/* <span
+              className={`${orbitron.className} text-xs sm:text-lg md:text-3xl lg:text-4xl font-semibold cursor-pointer`}
+            >
+              {siteDetails.siteName}
+            </span> */}
+          {/* </Link> */}
+
+          {/* Desktop Menu */}
+          {/* <ul className="hidden md:flex space-x-6">
+            {menuItems.map((item) => (
+              <li key={item.text}>
+                <Link
+                  href={item.url}
+                  className="text-white hover:text-[#93C5FD] transition-colors"
+                >
+                  {item.text}
+                </Link>
+              </li>
+            ))}
+          </ul> */}
           {/* Desktop Menu */}
           {/* <div className="hidden md:flex items-center justify-between w-full px-10">
             
@@ -104,14 +140,14 @@ const Header: React.FC = () => {
 
 
           {/* Contact / CTA Button */}
-          <div className="hidden md:flex">
+          {/* <div className="hidden md:flex">
             <Link
               href="#contactus"
               className="bg-[#2563EB] text-white px-4 py-2 rounded-md font-semibold hover:bg-[#1D4ED8] transition"
             >
               Contact Us
             </Link>
-          </div>
+          </div> */}
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
