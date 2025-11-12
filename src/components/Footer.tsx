@@ -7,7 +7,7 @@ import { footerDetails } from '@/data/footer';
 import { getPlatformIconByName } from '@/utils';
 
 import Image from 'next/image';
-import logoimage from '../app/Qadars Technology Logo.png'; // adjust path if needed
+import logoimage from '../app/Qadars Technology Logo Zoomed in.png'; // adjust path if needed
 
 const Footer: React.FC = () => {
     return (
@@ -20,8 +20,8 @@ const Footer: React.FC = () => {
                         <Image
                             src={logoimage}
                             alt="Qadars Technology Logo"
-                            width={200}
-                            height={200}
+                            width={150}
+                            height={150}
                             className="rounded"
                         />
                         {/* <h3 className="manrope text-xl font-semibold cursor-pointer text-[#E5E7EB]">

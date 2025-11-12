@@ -8,7 +8,7 @@ import Container from './Container';
 import { siteDetails } from '@/data/siteDetails';
 import { menuItems } from '@/data/menuItems';
 import Image from 'next/image';
-import logoimage from '../app/Qadars Technology Logo.png';
+import logoimage from '../app/Qadars Technology Logo Zoomed in.png';
 import { Orbitron } from "next/font/google";
 
 const orbitron = Orbitron({
@@ -46,9 +46,9 @@ const Header: React.FC = () => {
             <Image
               src={logoimage}
               alt="Qadars Technology Logo"
-              width={70}
+              width={150}
               height={70}
-              className="md:w-[100px] md:h-[100]"
+              className="md:w-[70] md:h-[70]"
             />
           </Link>
 
