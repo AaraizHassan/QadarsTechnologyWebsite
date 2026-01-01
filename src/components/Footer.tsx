@@ -95,9 +95,9 @@ const Footer: React.FC = () => {
             </div>
 
             {/* Footer Bottom */}
-            <div className="mt-8 md:text-center text-[#9CA3AF] px-6 border-t border-gray-700 pt-6">
+            {/* <div className="mt-8 md:text-center text-[#9CA3AF] px-6 border-t border-gray-700 pt-6">
                 <p>Copyright &copy; {new Date().getFullYear()} {siteDetails.siteName}. All rights reserved.</p>
-            </div>
+            </div> */}
         </footer>
     );
 };
